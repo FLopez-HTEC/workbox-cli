@@ -124,5 +124,8 @@
     "test_node": "gulp test_node",
     "test_server": "gulp test_server",
     "version": "gulp build && git add -A packages"
+  },
+  "dependencies": {
+    "xdg-basedir": "^5.1.0"
   }
 }

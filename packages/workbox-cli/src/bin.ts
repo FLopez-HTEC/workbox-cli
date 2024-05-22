@@ -9,7 +9,6 @@
 */
 
 import meow from 'meow';
-import updateNotifier from 'update-notifier';
 
 import {app} from './app';
 import {cleanupStackTrace} from './lib/cleanup-stack-trace.js';
@@ -24,8 +23,7 @@ export interface SupportedFlags extends meow.AnyFlags {
 
 void (async () => {
   const params: meow.Result<any> = meow(helpText);
-  updateNotifier({pkg: params.pkg as updateNotifier.Package}).notify();
-
+  logger.debug(`${'Skip package update checks'}\n`);
   try {
     await app(params);
   } catch (error) {
